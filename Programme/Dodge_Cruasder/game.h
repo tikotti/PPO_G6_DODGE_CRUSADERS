@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include <QDialog>
+#include "mainwindow.h"
 
 namespace Ui {
 class game;
@@ -15,6 +16,9 @@ public:
     explicit game(QWidget *parent = 0);
     ~game();
 
+private slots:
+    void on_pushButton_clicked();
+    
 private:
     Ui::game *ui;
 };

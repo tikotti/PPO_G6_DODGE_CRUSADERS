@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "game.h"
 
 namespace Ui {
 class MainWindow;
@@ -14,6 +15,10 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    goToStart();
+
+private slots:
+    void on_StartButton_clicked();
 
 private:
     Ui::MainWindow *ui;
