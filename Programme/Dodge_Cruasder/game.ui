@@ -13,11 +13,11 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="Hero">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>320</y>
+     <x>310</x>
+     <y>290</y>
      <width>70</width>
      <height>70</height>
     </rect>
@@ -25,11 +25,21 @@
    <property name="text">
     <string/>
    </property>
-   <property name="pixmap">
-    <pixmap>Images/Hero.png</pixmap>
-   </property>
    <property name="scaledContents">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>550</y>
+     <width>41</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Up</string>
    </property>
   </widget>
  </widget>

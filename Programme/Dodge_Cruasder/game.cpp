@@ -8,10 +8,16 @@ game::game(QWidget *parent) :
     ui(new Ui::game)
 {
     ui->setupUi(this);
-
+    QPixmap pix("H:/GitHub/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder/Images/Hero.png");
+    ui->Hero->setPixmap(pix);
 }
 
 game::~game()
 {
     delete ui;
+}
+
+void game::on_pushButton_clicked()
+{
+
 }
