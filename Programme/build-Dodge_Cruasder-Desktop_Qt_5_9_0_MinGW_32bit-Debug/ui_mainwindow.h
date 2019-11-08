@@ -17,8 +17,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
@@ -44,8 +42,7 @@ public:
     QVBoxLayout *verticalLayout_2;
     QLabel *label_2;
     QListView *listView;
-    QMenuBar *menuBar;
-    QMenu *menuDodge_Master;
+    QLabel *label_3;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -53,7 +50,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(975, 480);
+        MainWindow->resize(720, 720);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton = new QPushButton(centralWidget);
@@ -93,7 +90,7 @@ public:
 
         verticalLayoutWidget_2 = new QWidget(centralWidget);
         verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(610, 10, 351, 421));
+        verticalLayoutWidget_2->setGeometry(QRect(360, 10, 351, 421));
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -109,13 +106,16 @@ public:
 
         verticalLayout_2->addWidget(listView);
 
+        label_3 = new QLabel(centralWidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(0, 0, 731, 701));
+        label_3->setPixmap(QPixmap(QString::fromUtf8("Images/Art-pictures-red-space-stars_1920x1080.jpg")));
         MainWindow->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(MainWindow);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 975, 20));
-        menuDodge_Master = new QMenu(menuBar);
-        menuDodge_Master->setObjectName(QStringLiteral("menuDodge_Master"));
-        MainWindow->setMenuBar(menuBar);
+        label_3->raise();
+        pushButton->raise();
+        pushButton_2->raise();
+        verticalLayoutWidget->raise();
+        verticalLayoutWidget_2->raise();
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
@@ -123,8 +123,6 @@ public:
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
-
-        menuBar->addAction(menuDodge_Master->menuAction());
 
         retranslateUi(MainWindow);
 
@@ -141,7 +139,7 @@ public:
         radioButton_2->setText(QApplication::translate("MainWindow", "Medium", Q_NULLPTR));
         radioButton_3->setText(QApplication::translate("MainWindow", "Hard", Q_NULLPTR));
         label_2->setText(QApplication::translate("MainWindow", "Score Board", Q_NULLPTR));
-        menuDodge_Master->setTitle(QApplication::translate("MainWindow", "Dodge Master", Q_NULLPTR));
+        label_3->setText(QString());
     } // retranslateUi
 
 };
