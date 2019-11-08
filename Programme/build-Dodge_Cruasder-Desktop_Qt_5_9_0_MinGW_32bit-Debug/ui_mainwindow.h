@@ -19,8 +19,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
-#include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -30,21 +29,23 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
-    QLabel *label;
-    QRadioButton *radioButton;
-    QRadioButton *radioButton_2;
-    QRadioButton *radioButton_3;
     QWidget *verticalLayoutWidget_2;
     QVBoxLayout *verticalLayout_2;
-    QLabel *label_2;
+    QLabel *Name_2;
     QListView *listView;
-    QLabel *label_3;
-    QToolBar *mainToolBar;
-    QStatusBar *statusBar;
+    QLabel *Background;
+    QLabel *label;
+    QWidget *verticalLayoutWidget_3;
+    QVBoxLayout *verticalLayout;
+    QPushButton *StartButton;
+    QSpacerItem *horizontalSpacer;
+    QLabel *Name;
+    QVBoxLayout *DifficultyLayout;
+    QRadioButton *Easy_radioButton;
+    QRadioButton *Medium_radioButton;
+    QRadioButton *Hard_radioButton;
+    QSpacerItem *horizontalSpacer_2;
+    QPushButton *CloseButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -53,41 +54,6 @@ public:
         MainWindow->resize(720, 720);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(49, 40, 91, 21));
-        pushButton_2 = new QPushButton(centralWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(50, 180, 91, 21));
-        verticalLayoutWidget = new QWidget(centralWidget);
-        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(50, 70, 91, 101));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(verticalLayoutWidget);
-        label->setObjectName(QStringLiteral("label"));
-
-        verticalLayout->addWidget(label);
-
-        radioButton = new QRadioButton(verticalLayoutWidget);
-        radioButton->setObjectName(QStringLiteral("radioButton"));
-
-        verticalLayout->addWidget(radioButton);
-
-        radioButton_2 = new QRadioButton(verticalLayoutWidget);
-        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
-        radioButton_2->setEnabled(true);
-
-        verticalLayout->addWidget(radioButton_2);
-
-        radioButton_3 = new QRadioButton(verticalLayoutWidget);
-        radioButton_3->setObjectName(QStringLiteral("radioButton_3"));
-
-        verticalLayout->addWidget(radioButton_3);
-
         verticalLayoutWidget_2 = new QWidget(centralWidget);
         verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
         verticalLayoutWidget_2->setGeometry(QRect(360, 10, 351, 421));
@@ -96,33 +62,81 @@ public:
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_2 = new QLabel(verticalLayoutWidget_2);
-        label_2->setObjectName(QStringLiteral("label_2"));
+        Name_2 = new QLabel(verticalLayoutWidget_2);
+        Name_2->setObjectName(QStringLiteral("Name_2"));
 
-        verticalLayout_2->addWidget(label_2);
+        verticalLayout_2->addWidget(Name_2);
 
         listView = new QListView(verticalLayoutWidget_2);
         listView->setObjectName(QStringLiteral("listView"));
 
         verticalLayout_2->addWidget(listView);
 
-        label_3 = new QLabel(centralWidget);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(0, 0, 731, 701));
-        label_3->setPixmap(QPixmap(QString::fromUtf8("Images/Art-pictures-red-space-stars_1920x1080.jpg")));
+        Background = new QLabel(centralWidget);
+        Background->setObjectName(QStringLiteral("Background"));
+        Background->setGeometry(QRect(0, 0, 731, 701));
+        Background->setPixmap(QPixmap(QString::fromUtf8("Images/Art-pictures-red-space-stars_1920x1080.jpg")));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(50, 350, 250, 250));
+        verticalLayoutWidget_3 = new QWidget(centralWidget);
+        verticalLayoutWidget_3->setObjectName(QStringLiteral("verticalLayoutWidget_3"));
+        verticalLayoutWidget_3->setGeometry(QRect(10, 10, 341, 301));
+        verticalLayout = new QVBoxLayout(verticalLayoutWidget_3);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        StartButton = new QPushButton(verticalLayoutWidget_3);
+        StartButton->setObjectName(QStringLiteral("StartButton"));
+
+        verticalLayout->addWidget(StartButton);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        verticalLayout->addItem(horizontalSpacer);
+
+        Name = new QLabel(verticalLayoutWidget_3);
+        Name->setObjectName(QStringLiteral("Name"));
+
+        verticalLayout->addWidget(Name);
+
+        DifficultyLayout = new QVBoxLayout();
+        DifficultyLayout->setSpacing(6);
+        DifficultyLayout->setObjectName(QStringLiteral("DifficultyLayout"));
+        Easy_radioButton = new QRadioButton(verticalLayoutWidget_3);
+        Easy_radioButton->setObjectName(QStringLiteral("Easy_radioButton"));
+
+        DifficultyLayout->addWidget(Easy_radioButton);
+
+        Medium_radioButton = new QRadioButton(verticalLayoutWidget_3);
+        Medium_radioButton->setObjectName(QStringLiteral("Medium_radioButton"));
+        Medium_radioButton->setEnabled(true);
+
+        DifficultyLayout->addWidget(Medium_radioButton);
+
+        Hard_radioButton = new QRadioButton(verticalLayoutWidget_3);
+        Hard_radioButton->setObjectName(QStringLiteral("Hard_radioButton"));
+
+        DifficultyLayout->addWidget(Hard_radioButton);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        DifficultyLayout->addItem(horizontalSpacer_2);
+
+        CloseButton = new QPushButton(verticalLayoutWidget_3);
+        CloseButton->setObjectName(QStringLiteral("CloseButton"));
+
+        DifficultyLayout->addWidget(CloseButton);
+
+
+        verticalLayout->addLayout(DifficultyLayout);
+
         MainWindow->setCentralWidget(centralWidget);
-        label_3->raise();
-        pushButton->raise();
-        pushButton_2->raise();
-        verticalLayoutWidget->raise();
+        Background->raise();
         verticalLayoutWidget_2->raise();
-        mainToolBar = new QToolBar(MainWindow);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        MainWindow->insertToolBarBreak(mainToolBar);
-        statusBar = new QStatusBar(MainWindow);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        MainWindow->setStatusBar(statusBar);
+        label->raise();
+        verticalLayoutWidget_3->raise();
 
         retranslateUi(MainWindow);
 
@@ -132,14 +146,15 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainWindow", "Start", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Quit", Q_NULLPTR));
-        label->setText(QApplication::translate("MainWindow", "Choose difficulty", Q_NULLPTR));
-        radioButton->setText(QApplication::translate("MainWindow", "Easy", Q_NULLPTR));
-        radioButton_2->setText(QApplication::translate("MainWindow", "Medium", Q_NULLPTR));
-        radioButton_3->setText(QApplication::translate("MainWindow", "Hard", Q_NULLPTR));
-        label_2->setText(QApplication::translate("MainWindow", "Score Board", Q_NULLPTR));
-        label_3->setText(QString());
+        Name_2->setText(QApplication::translate("MainWindow", "Score Board", Q_NULLPTR));
+        Background->setText(QString());
+        label->setText(QApplication::translate("MainWindow", "Character Overview", Q_NULLPTR));
+        StartButton->setText(QApplication::translate("MainWindow", "Start", Q_NULLPTR));
+        Name->setText(QApplication::translate("MainWindow", "Choose difficulty", Q_NULLPTR));
+        Easy_radioButton->setText(QApplication::translate("MainWindow", "Easy", Q_NULLPTR));
+        Medium_radioButton->setText(QApplication::translate("MainWindow", "Medium", Q_NULLPTR));
+        Hard_radioButton->setText(QApplication::translate("MainWindow", "Hard", Q_NULLPTR));
+        CloseButton->setText(QApplication::translate("MainWindow", "Quit", Q_NULLPTR));
     } // retranslateUi
 
 };
