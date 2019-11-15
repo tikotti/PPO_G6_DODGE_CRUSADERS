@@ -1,52 +1,70 @@
-#include "send_win.h"
+#include <QtNetwork>
+#include <QThread>
+#include <iostream>
+#include <sstream>
+#include "Send_Win.h"
 
 Send_Win::Send_Win()
+    :   m_networkSession(0)
 {
+    std::cout << "Application Client" << std::endl;
+    m_tcpSocket = new QTcpSocket(this);
 
+    // La méthode lireTexte sera appelée sur le signal readyRead
+    connect(m_tcpSocket, SIGNAL(readyRead()), this, SLOT(lireTexte()));
+
+    // La méthode afficherErreur sera appelée sur le signal error
+    connect(m_tcpSocket, SIGNAL(error(QAbstractSocket::SocketError)),
+            this, SLOT(afficherErreur(QAbstractSocket::SocketError)));
+
+    QNetworkConfigurationManager manager;
+    QNetworkConfiguration config;
+
+    std::cout << "Ouverture session" << std::endl;
+    m_networkSession = new QNetworkSession(config, this);
+
+    m_networkSession->open();
+
+    m_blockSize = 0;
+    m_tcpSocket->abort();
+
+    // connexion au serveur sur le port 53000
+    m_tcpSocket->connectToHost( QHostAddress("10.16.2.144").toString(),53000 );
+    envoiTexte("GAGNE:6");
 }
 
-void Send_Win::nouvelleConnexion()
+
+//###############################################################################################################
+// Méthode appelée lors d'un déclenchement d'une excepetion sur un socket
+void Send_Win::afficherErreur(QAbstractSocket::SocketError socketError)
 {
-    QTcpSocket *nouveauClient = serveur->nextPendingConnection();
-    clients << nouveauClient;
-
-    connect(nouveauClient, SIGNAL(readyRead()), this, SLOT(donneesRecues()));
-    connect(nouveauClient, SIGNAL(disconnected()), this, SLOT(deconnexionClient()));
-}
-
-void Send_Win::donneesRecues()
-{
-    // 1 : on reçoit un paquet (ou un sous-paquet) d'un des clients
-
-    // On détermine quel client envoie le message (recherche du QTcpSocket du client)
-    QTcpSocket *socket = qobject_cast<QTcpSocket *>(sender());
-    if (socket == 0) // Si par hasard on n'a pas trouvé le client à l'origine du signal, on arrête la méthode
-        return;
-
-    // Si tout va bien, on continue : on récupère le message
-    QDataStream in(socket);
-
-    if (tailleMessage == 0) // Si on ne connaît pas encore la taille du message, on essaie de la récupérer
-    {
-        if (socket->bytesAvailable() < (int)sizeof(quint16)) // On n'a pas reçu la taille du message en entier
-             return;
-
-        in >> tailleMessage; // Si on a reçu la taille du message en entier, on la récupère
+    switch (socketError) {
+    case QAbstractSocket::RemoteHostClosedError:
+        break;
+    case QAbstractSocket::HostNotFoundError:
+        std::cout << "Le serveur n'a pas ete trouve. Verifiez le parametrage du serveur et du port." << std::endl;
+        break;
+    case QAbstractSocket::ConnectionRefusedError:
+        std::cout << "La communication a ete refusee. Verifiez que le serveur est pret, ainsi que le parametrage du serveur et du port." << std::endl;
+        break;
+    default:
+        std::cout << "L'erreur suivante s'est produite : " << m_tcpSocket->errorString().toStdString() << std::endl;
     }
-
-    // Si on connaît la taille du message, on vérifie si on a reçu le message en entier
-    if (socket->bytesAvailable() < tailleMessage) // Si on n'a pas encore tout reçu, on arrête la méthode
-        return;
+}
 
 
-    // Si ces lignes s'exécutent, c'est qu'on a reçu tout le message : on peut le récupérer !
-    QString message;
-    in >> message;
+//###############################################################################################################
+// Méthode envoyant un texte au serveur
+void Send_Win::envoiTexte( const std::string& s )
+{
+    QString texte = tr(s.c_str());
+    QByteArray block;
+    QDataStream out(&block, QIODevice::WriteOnly);
+    out.setVersion(QDataStream::Qt_4_0);
+    out << (quint16)0;
+    out << texte;
+    out.device()->seek(0);
+    out << (quint16)(block.size() - sizeof(quint16));
 
-
-    // 2 : on renvoie le message à tous les clients
-    envoyerATous(message);
-
-    // 3 : remise de la taille du message à 0 pour permettre la réception des futurs messages
-    tailleMessage = 0;
+    m_tcpSocket->write(block);
 }
