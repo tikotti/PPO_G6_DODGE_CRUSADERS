@@ -7,9 +7,13 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    //Send_Win sw;
+    bool send = false;
 
-    //std::cout << "commande_message_passe" << std::endl;
+    if(send){
+        Send_Win sw;
+        std::cout << "commande_message_passe" << std::endl;
+    }
+
 
     MainWindow w;
     w.show();

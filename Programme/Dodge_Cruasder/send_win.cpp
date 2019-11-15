@@ -29,9 +29,10 @@ Send_Win::Send_Win()
     m_tcpSocket->abort();
 
     // connexion au serveur sur le port 53000
-    m_tcpSocket->connectToHost( QHostAddress("10.16.2.144").toString(),53000 );
+    m_tcpSocket->connectToHost( QHostAddress("10.16.2.47").toString(),53000 );
     envoiTexte("GAGNE:6");
 }
+
 
 //###############################################################################################################
 // Méthode appelée lors d'un déclenchement d'une excepetion sur un socket
