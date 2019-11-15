@@ -145,7 +145,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Dodge Crusader", Q_NULLPTR));
         Name_2->setText(QApplication::translate("MainWindow", "Score Board", Q_NULLPTR));
         Background->setText(QString());
         label->setText(QApplication::translate("MainWindow", "Character Overview", Q_NULLPTR));
