@@ -33,7 +33,6 @@ Send_Win::Send_Win()
     envoiTexte("GAGNE:6");
 }
 
-
 //###############################################################################################################
 // Méthode appelée lors d'un déclenchement d'une excepetion sur un socket
 void Send_Win::afficherErreur(QAbstractSocket::SocketError socketError)

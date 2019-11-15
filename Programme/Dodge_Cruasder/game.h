@@ -14,6 +14,7 @@ class game : public QDialog
 
 public:
     explicit game(QWidget *parent = 0);
+    void asteroide();
     ~game();
 
 private slots:
@@ -28,8 +29,17 @@ private slots:
 private:
     Ui::game *ui;
 
-    int m_x = 340; //position initaile du vaisseau au centre de l'écran sur l'axe des abscisses
-    int m_y = 340; //position initaile du vaisseau au centre de l'écran sur l'axe des ordonnées
+    int m_x = 340; //position initiale du vaisseau au centre de l'écran sur l'axe des abscisses
+    int m_y = 340; //position initiale du vaisseau au centre de l'écran sur l'axe des ordonnées
+
+    int mx_vaisseau = 0; //défini une variable de collision x pour le vaisseau
+    int my_vaisseau = 0; //défini une variable de collision y pour le vaisseau
+
+    int mx_asteroide = 0; //défini une variable de collision x pour un astéroide
+    int my_asteroide = 0; //défini une variable de collision x pour un astéroide
+    int taille_asteroide = rand() % 50 + 1; // défini une taille d'astéroide entre 1 et 50
+    int rotation_asteroide = 0; // variable progressive qui définira la rotation de l'astéroide
+
 };
 
 #endif // GAME_H
