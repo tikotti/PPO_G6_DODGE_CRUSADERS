@@ -26,16 +26,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
+    gameover.cpp\
     game.cpp \
     send_win.cpp
 
 HEADERS += \
         mainwindow.h \
+    gameover.h \
     game.h \
     send_win.h
 
 FORMS += \
         mainwindow.ui \
+    gameover.ui \
     game.ui
 
 QT += widgets network
