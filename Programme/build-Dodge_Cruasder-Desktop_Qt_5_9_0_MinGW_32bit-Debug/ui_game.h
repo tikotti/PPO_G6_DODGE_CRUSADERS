@@ -28,6 +28,7 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
+    QLabel *Asteroide;
 
     void setupUi(QDialog *game)
     {
@@ -50,6 +51,10 @@ public:
         pushButton_4 = new QPushButton(game);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(560, 572, 41, 31));
+        Asteroide = new QLabel(game);
+        Asteroide->setObjectName(QStringLiteral("Asteroide"));
+        Asteroide->setGeometry(QRect(90, 10, 40, 40));
+        Asteroide->setScaledContents(true);
 
         retranslateUi(game);
 
@@ -64,6 +69,7 @@ public:
         pushButton_2->setText(QApplication::translate("game", "Down", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("game", "Right", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("game", "Left", Q_NULLPTR));
+        Asteroide->setText(QString());
     } // retranslateUi
 
 };
