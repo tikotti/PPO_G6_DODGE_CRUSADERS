@@ -13,10 +13,9 @@ game::game(QWidget *parent) :
     ui(new Ui::game)
 {
     ui->setupUi(this);
-    QPixmap pix(QApplication::applicationDirPath() + "\Images\Hero.png");
+    QPixmap pix(QApplication::applicationDirPath() + "/Images/Hero.png");
     ui->Hero->setPixmap(pix);
     ui->Hero->move(m_x,m_y);
-
 }
 
 

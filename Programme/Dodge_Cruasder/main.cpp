@@ -2,6 +2,9 @@
 #include "send_win.h"
 #include <iostream>
 #include <QApplication>
+#include <QPalette>
+#include <QBrush>
+#include <QPixmap>
 
 int main(int argc, char *argv[])
 {

@@ -33,6 +33,11 @@ Send_Win::Send_Win()
     envoiTexte("GAGNE:6");
 }
 
+Send_Win::~Send_Win()
+{
+
+}
+
 
 //###############################################################################################################
 // Méthode appelée lors d'un déclenchement d'une excepetion sur un socket

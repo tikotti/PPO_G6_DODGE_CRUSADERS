@@ -7,16 +7,24 @@
 #include <QShowEvent>
 #include <QLabel>
 
+namespace Ui {
+class gameover;
+}
+
 class gameover : public QWidget
 {
     Q_OBJECT
+
 public:
-    gameover(QWidget *parent = 0);
+    explicit gameover(QWidget *parent = 0);
     ~gameover();
     QLabel label;
 
 protected:
     void showEvent(QShowEvent *event);
+
+private:
+    Ui::gameover *ui;
 };
 
 #endif // GAMEOVER_H

@@ -48,3 +48,9 @@ INCLUDEPATH += .
 # Input
 # HEADERS += FenServeur.h
 # SOURCES += FenServeur.cpp main.cpp
+
+DISTFILES += \
+    Images/GO_BG.jpg \
+    Images/M_BG.jpg \
+    Images/Hero.png \
+    Images/Hero2.png

@@ -11,7 +11,11 @@
 gameover::gameover(QWidget *parent) : QWidget(parent)
 {
     QLabel *Label = new QLabel(this);
-    label.setPixmap(QPixmap(QApplication::applicationDirPath() + "/images/GO_BG.jpg"));
+    QPixmap bkgnd("Images/GO_BG.jpg");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(palette);
 }
 
 gameover::~gameover()

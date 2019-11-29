@@ -13,6 +13,7 @@ class Send_Win : public QObject
 
     public:
         Send_Win();
+        ~Send_Win();
 
     private slots:
         void afficherErreur(QAbstractSocket::SocketError socketError);
