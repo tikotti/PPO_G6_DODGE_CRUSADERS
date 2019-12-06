@@ -20,8 +20,8 @@ public:
     goToStart();
 
 private slots:
-    void on_StartButton_clicked();
-    void on_EndButton_clicked();
+    void on_btn_Start_clicked();
+    void on_btn_Quit_clicked();
 
 private:
     Ui::MainWindow *ui;

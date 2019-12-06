@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>722</width>
-    <height>637</height>
+    <width>720</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="cursor">
@@ -23,136 +23,62 @@
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>10</y>
-      <width>351</width>
-      <height>421</height>
+      <x>10</x>
+      <y>480</y>
+      <width>701</width>
+      <height>221</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QLabel" name="Name_2">
+      <widget class="QLabel" name="lbl_score">
+       <property name="font">
+        <font>
+         <family>Agency FB</family>
+         <pointsize>20</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::StrongFocus</enum>
+       </property>
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
        <property name="text">
-        <string>Score Board</string>
+        <string>Tableau des scores</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QListView" name="listView"/>
+      <widget class="QListView" name="lst_score"/>
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="lbl_charactere">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>350</y>
-      <width>250</width>
-      <height>250</height>
+      <x>500</x>
+      <y>60</y>
+      <width>161</width>
+      <height>281</height>
      </rect>
     </property>
     <property name="text">
-     <string>Character Overview</string>
+     <string/>
     </property>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>341</width>
-      <height>301</height>
-     </rect>
+    <property name="pixmap">
+     <pixmap>Images/Hero.png</pixmap>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QPushButton" name="StartButton">
-       <property name="text">
-        <string>Start</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="Name">
-       <property name="text">
-        <string>Choose difficulty</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="DifficultyLayout">
-       <item>
-        <widget class="QRadioButton" name="Easy_radioButton">
-         <property name="text">
-          <string>Easy</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QRadioButton" name="Medium_radioButton">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="text">
-          <string>Medium</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QRadioButton" name="Hard_radioButton">
-         <property name="text">
-          <string>Hard</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="CloseButton">
-         <property name="text">
-          <string>Quit</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QPushButton" name="EndButton">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>520</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Game Over</string>
+    <property name="scaledContents">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -160,8 +86,8 @@
      <rect>
       <x>0</x>
       <y>2</y>
-      <width>721</width>
-      <height>641</height>
+      <width>720</width>
+      <height>720</height>
      </rect>
     </property>
     <property name="text">
@@ -180,11 +106,59 @@
      <number>-1</number>
     </property>
    </widget>
+   <widget class="QPushButton" name="btn_Start">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>100</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Agency FB</family>
+      <pointsize>20</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Commencer</string>
+    </property>
+    <property name="autoDefault">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_Quit">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>230</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Agency FB</family>
+      <pointsize>20</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Quitter</string>
+    </property>
+    <property name="autoDefault">
+     <bool>true</bool>
+    </property>
+   </widget>
    <zorder>label_2</zorder>
    <zorder>verticalLayoutWidget_2</zorder>
-   <zorder>label</zorder>
-   <zorder>verticalLayoutWidget_3</zorder>
-   <zorder>EndButton</zorder>
+   <zorder>lbl_charactere</zorder>
+   <zorder>btn_Start</zorder>
+   <zorder>btn_Quit</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

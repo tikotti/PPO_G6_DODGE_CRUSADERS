@@ -8,9 +8,10 @@
 #include <QLabel>
 #include <QWidget>
 
-gameover::gameover(QWidget *parent) : QWidget(parent)
+gameover::gameover(QDialog *parent) :
+    QDialog(parent)
 {
-    QLabel *Label = new QLabel(this);
+   // QLabel *Label = new QLabel(this);
     QPixmap bkgnd("Images/GO_BG.jpg");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
@@ -26,4 +27,9 @@ gameover::~gameover()
 void gameover::showEvent(QShowEvent *event)
 {
     Q_UNUSED(event);
+}
+
+void gameover::on_btn_Quit_clicked()
+{
+    close();
 }

@@ -18,8 +18,6 @@
 #include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -31,112 +29,78 @@ public:
     QWidget *centralWidget;
     QWidget *verticalLayoutWidget_2;
     QVBoxLayout *verticalLayout_2;
-    QLabel *Name_2;
-    QListView *listView;
-    QLabel *Background;
-    QLabel *label;
-    QWidget *verticalLayoutWidget_3;
-    QVBoxLayout *verticalLayout;
-    QPushButton *StartButton;
-    QSpacerItem *horizontalSpacer;
-    QLabel *Name;
-    QVBoxLayout *DifficultyLayout;
-    QRadioButton *Easy_radioButton;
-    QRadioButton *Medium_radioButton;
-    QRadioButton *Hard_radioButton;
-    QSpacerItem *horizontalSpacer_2;
-    QPushButton *CloseButton;
+    QLabel *lbl_score;
+    QListView *lst_score;
+    QLabel *lbl_charactere;
+    QLabel *label_2;
+    QPushButton *btn_Start;
+    QPushButton *btn_Quit;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(720, 720);
+        MainWindow->setCursor(QCursor(Qt::CrossCursor));
+        MainWindow->setAutoFillBackground(false);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayoutWidget_2 = new QWidget(centralWidget);
         verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(360, 10, 351, 421));
+        verticalLayoutWidget_2->setGeometry(QRect(10, 480, 701, 221));
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        Name_2 = new QLabel(verticalLayoutWidget_2);
-        Name_2->setObjectName(QStringLiteral("Name_2"));
+        lbl_score = new QLabel(verticalLayoutWidget_2);
+        lbl_score->setObjectName(QStringLiteral("lbl_score"));
+        QFont font;
+        font.setFamily(QStringLiteral("Agency FB"));
+        font.setPointSize(20);
+        font.setBold(true);
+        font.setWeight(75);
+        lbl_score->setFont(font);
+        lbl_score->setFocusPolicy(Qt::StrongFocus);
+        lbl_score->setAutoFillBackground(true);
+        lbl_score->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_2->addWidget(Name_2);
+        verticalLayout_2->addWidget(lbl_score);
 
-        listView = new QListView(verticalLayoutWidget_2);
-        listView->setObjectName(QStringLiteral("listView"));
+        lst_score = new QListView(verticalLayoutWidget_2);
+        lst_score->setObjectName(QStringLiteral("lst_score"));
 
-        verticalLayout_2->addWidget(listView);
+        verticalLayout_2->addWidget(lst_score);
 
-        Background = new QLabel(centralWidget);
-        Background->setObjectName(QStringLiteral("Background"));
-        Background->setGeometry(QRect(0, 0, 731, 701));
-        Background->setPixmap(QPixmap(QString::fromUtf8("Images/Art-pictures-red-space-stars_1920x1080.jpg")));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(50, 350, 250, 250));
-        verticalLayoutWidget_3 = new QWidget(centralWidget);
-        verticalLayoutWidget_3->setObjectName(QStringLiteral("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(10, 10, 341, 301));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget_3);
-        verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        StartButton = new QPushButton(verticalLayoutWidget_3);
-        StartButton->setObjectName(QStringLiteral("StartButton"));
-
-        verticalLayout->addWidget(StartButton);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        verticalLayout->addItem(horizontalSpacer);
-
-        Name = new QLabel(verticalLayoutWidget_3);
-        Name->setObjectName(QStringLiteral("Name"));
-
-        verticalLayout->addWidget(Name);
-
-        DifficultyLayout = new QVBoxLayout();
-        DifficultyLayout->setSpacing(6);
-        DifficultyLayout->setObjectName(QStringLiteral("DifficultyLayout"));
-        Easy_radioButton = new QRadioButton(verticalLayoutWidget_3);
-        Easy_radioButton->setObjectName(QStringLiteral("Easy_radioButton"));
-
-        DifficultyLayout->addWidget(Easy_radioButton);
-
-        Medium_radioButton = new QRadioButton(verticalLayoutWidget_3);
-        Medium_radioButton->setObjectName(QStringLiteral("Medium_radioButton"));
-        Medium_radioButton->setEnabled(true);
-
-        DifficultyLayout->addWidget(Medium_radioButton);
-
-        Hard_radioButton = new QRadioButton(verticalLayoutWidget_3);
-        Hard_radioButton->setObjectName(QStringLiteral("Hard_radioButton"));
-
-        DifficultyLayout->addWidget(Hard_radioButton);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        DifficultyLayout->addItem(horizontalSpacer_2);
-
-        CloseButton = new QPushButton(verticalLayoutWidget_3);
-        CloseButton->setObjectName(QStringLiteral("CloseButton"));
-
-        DifficultyLayout->addWidget(CloseButton);
-
-
-        verticalLayout->addLayout(DifficultyLayout);
-
+        lbl_charactere = new QLabel(centralWidget);
+        lbl_charactere->setObjectName(QStringLiteral("lbl_charactere"));
+        lbl_charactere->setEnabled(true);
+        lbl_charactere->setGeometry(QRect(500, 60, 161, 281));
+        lbl_charactere->setPixmap(QPixmap(QString::fromUtf8("Images/Hero.png")));
+        lbl_charactere->setScaledContents(false);
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(0, 2, 720, 720));
+        label_2->setPixmap(QPixmap(QString::fromUtf8("Images/M_BG.jpg")));
+        label_2->setScaledContents(true);
+        label_2->setMargin(0);
+        label_2->setIndent(-1);
+        btn_Start = new QPushButton(centralWidget);
+        btn_Start->setObjectName(QStringLiteral("btn_Start"));
+        btn_Start->setGeometry(QRect(120, 100, 131, 41));
+        btn_Start->setFont(font);
+        btn_Start->setAutoDefault(true);
+        btn_Quit = new QPushButton(centralWidget);
+        btn_Quit->setObjectName(QStringLiteral("btn_Quit"));
+        btn_Quit->setGeometry(QRect(120, 230, 131, 41));
+        btn_Quit->setFont(font);
+        btn_Quit->setAutoDefault(true);
         MainWindow->setCentralWidget(centralWidget);
-        Background->raise();
+        label_2->raise();
         verticalLayoutWidget_2->raise();
-        label->raise();
-        verticalLayoutWidget_3->raise();
+        lbl_charactere->raise();
+        btn_Start->raise();
+        btn_Quit->raise();
 
         retranslateUi(MainWindow);
 
@@ -146,15 +110,11 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Dodge Crusader", Q_NULLPTR));
-        Name_2->setText(QApplication::translate("MainWindow", "Score Board", Q_NULLPTR));
-        Background->setText(QString());
-        label->setText(QApplication::translate("MainWindow", "Character Overview", Q_NULLPTR));
-        StartButton->setText(QApplication::translate("MainWindow", "Start", Q_NULLPTR));
-        Name->setText(QApplication::translate("MainWindow", "Choose difficulty", Q_NULLPTR));
-        Easy_radioButton->setText(QApplication::translate("MainWindow", "Easy", Q_NULLPTR));
-        Medium_radioButton->setText(QApplication::translate("MainWindow", "Medium", Q_NULLPTR));
-        Hard_radioButton->setText(QApplication::translate("MainWindow", "Hard", Q_NULLPTR));
-        CloseButton->setText(QApplication::translate("MainWindow", "Quit", Q_NULLPTR));
+        lbl_score->setText(QApplication::translate("MainWindow", "Tableau des scores", Q_NULLPTR));
+        lbl_charactere->setText(QString());
+        label_2->setText(QString());
+        btn_Start->setText(QApplication::translate("MainWindow", "Commencer", Q_NULLPTR));
+        btn_Quit->setText(QApplication::translate("MainWindow", "Quitter", Q_NULLPTR));
     } // retranslateUi
 
 };

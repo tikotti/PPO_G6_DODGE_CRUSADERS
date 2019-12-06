@@ -45,6 +45,7 @@ void MainWindow::on_btn_Quit_clicked()
     goWindow.setModal(true);
     goWindow.exec();
     goWindow.setFixedSize(goWindow.size());
+    goWindow.Res
 
     //Fermetrue de l'ancienne fenêtre.
     close();
