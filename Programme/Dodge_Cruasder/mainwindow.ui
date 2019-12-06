@@ -6,12 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
-    <height>720</height>
+    <width>722</width>
+    <height>637</height>
    </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>CrossCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>Dodge Crusader</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QWidget" name="verticalLayoutWidget_2">
@@ -35,22 +41,6 @@
       <widget class="QListView" name="listView"/>
      </item>
     </layout>
-   </widget>
-   <widget class="QLabel" name="Background">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>731</width>
-      <height>701</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>Images/Art-pictures-red-space-stars_1920x1080.jpg</pixmap>
-    </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -152,10 +142,49 @@
      </item>
     </layout>
    </widget>
-   <zorder>Background</zorder>
+   <widget class="QPushButton" name="EndButton">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>520</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Game Over</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>2</y>
+      <width>721</width>
+      <height>641</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Images/M_BG.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <property name="indent">
+     <number>-1</number>
+    </property>
+   </widget>
+   <zorder>label_2</zorder>
    <zorder>verticalLayoutWidget_2</zorder>
    <zorder>label</zorder>
    <zorder>verticalLayoutWidget_3</zorder>
+   <zorder>EndButton</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

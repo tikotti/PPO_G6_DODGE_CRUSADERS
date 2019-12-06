@@ -26,16 +26,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
+    gameover.cpp\
     game.cpp \
     send_win.cpp
 
 HEADERS += \
         mainwindow.h \
+    gameover.h \
     game.h \
     send_win.h
 
 FORMS += \
         mainwindow.ui \
+    gameover.ui \
     game.ui
 
 QT += widgets network
@@ -45,3 +48,9 @@ INCLUDEPATH += .
 # Input
 # HEADERS += FenServeur.h
 # SOURCES += FenServeur.cpp main.cpp
+
+DISTFILES += \
+    Images/GO_BG.jpg \
+    Images/M_BG.jpg \
+    Images/Hero.png \
+    Images/Hero2.png

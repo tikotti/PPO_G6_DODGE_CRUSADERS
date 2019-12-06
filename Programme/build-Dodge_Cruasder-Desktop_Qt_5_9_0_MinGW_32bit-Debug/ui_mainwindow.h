@@ -33,7 +33,6 @@ public:
     QVBoxLayout *verticalLayout_2;
     QLabel *Name_2;
     QListView *listView;
-    QLabel *Background;
     QLabel *label;
     QWidget *verticalLayoutWidget_3;
     QVBoxLayout *verticalLayout;
@@ -46,12 +45,16 @@ public:
     QRadioButton *Hard_radioButton;
     QSpacerItem *horizontalSpacer_2;
     QPushButton *CloseButton;
+    QPushButton *EndButton;
+    QLabel *label_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(720, 720);
+        MainWindow->resize(722, 637);
+        MainWindow->setCursor(QCursor(Qt::CrossCursor));
+        MainWindow->setAutoFillBackground(false);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayoutWidget_2 = new QWidget(centralWidget);
@@ -72,10 +75,6 @@ public:
 
         verticalLayout_2->addWidget(listView);
 
-        Background = new QLabel(centralWidget);
-        Background->setObjectName(QStringLiteral("Background"));
-        Background->setGeometry(QRect(0, 0, 731, 701));
-        Background->setPixmap(QPixmap(QString::fromUtf8("Images/Art-pictures-red-space-stars_1920x1080.jpg")));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(50, 350, 250, 250));
@@ -132,11 +131,22 @@ public:
 
         verticalLayout->addLayout(DifficultyLayout);
 
+        EndButton = new QPushButton(centralWidget);
+        EndButton->setObjectName(QStringLiteral("EndButton"));
+        EndButton->setGeometry(QRect(440, 520, 80, 21));
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(0, 2, 721, 641));
+        label_2->setPixmap(QPixmap(QString::fromUtf8("Images/M_BG.jpg")));
+        label_2->setScaledContents(true);
+        label_2->setMargin(0);
+        label_2->setIndent(-1);
         MainWindow->setCentralWidget(centralWidget);
-        Background->raise();
+        label_2->raise();
         verticalLayoutWidget_2->raise();
         label->raise();
         verticalLayoutWidget_3->raise();
+        EndButton->raise();
 
         retranslateUi(MainWindow);
 
@@ -147,7 +157,6 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Dodge Crusader", Q_NULLPTR));
         Name_2->setText(QApplication::translate("MainWindow", "Score Board", Q_NULLPTR));
-        Background->setText(QString());
         label->setText(QApplication::translate("MainWindow", "Character Overview", Q_NULLPTR));
         StartButton->setText(QApplication::translate("MainWindow", "Start", Q_NULLPTR));
         Name->setText(QApplication::translate("MainWindow", "Choose difficulty", Q_NULLPTR));
@@ -155,6 +164,8 @@ public:
         Medium_radioButton->setText(QApplication::translate("MainWindow", "Medium", Q_NULLPTR));
         Hard_radioButton->setText(QApplication::translate("MainWindow", "Hard", Q_NULLPTR));
         CloseButton->setText(QApplication::translate("MainWindow", "Quit", Q_NULLPTR));
+        EndButton->setText(QApplication::translate("MainWindow", "Game Over", Q_NULLPTR));
+        label_2->setText(QString());
     } // retranslateUi
 
 };
