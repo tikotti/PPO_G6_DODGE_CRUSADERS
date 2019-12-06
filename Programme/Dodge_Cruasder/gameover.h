@@ -3,21 +3,18 @@
 
 #include <QDialog>
 #include "mainwindow.h"
-#include <QWidget>
-#include <QShowEvent>
-#include <QLabel>
 
 
 namespace Ui {
 class gameover;
 }
 
-class gameover : public QWidget
+class gameover : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit gameover(QWidget *parent = 0);
+    explicit gameover(QDialog *parent = 0);
     ~gameover();
     QLabel label;
 
@@ -26,6 +23,7 @@ protected:
 
 private:
     Ui::gameover *ui;
+    void on_btn_Quit_clicked();
 };
 
 #endif // GAMEOVER_H

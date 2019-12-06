@@ -15,6 +15,12 @@ MainWindow::MainWindow(QWidget *parent) :
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palette);
+
+    QPixmap hero("Images/Hero.png");
+    hero = hero.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette hpal;
+    hpal.setBrush(QPalette::Background, hero);
+    ui->lbl_charactere->setPalette(hpal);
 }
 
 MainWindow::~MainWindow()
@@ -22,16 +28,26 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_StartButton_clicked()
+void MainWindow::on_btn_Start_clicked()
 {
     game gWindow;
     gWindow.setModal(true);
     gWindow.exec();
+    gWindow.setFixedSize(gWindow.size());
+    goWindow.resize(false);
+
+    //Fermetrue de l'ancienne fenêtre.
+    close();
 }
 
-void MainWindow::on_EndButton_clicked()
+void MainWindow::on_btn_Quit_clicked()
 {
     gameover goWindow;
-    //goWindow.setModal(true);
-    //goWindow.exec();
+    goWindow.setModal(true);
+    goWindow.exec();
+    goWindow.setFixedSize(goWindow.size());
+    goWindow.resize(false);
+
+    //Fermetrue de l'ancienne fenêtre.
+    close();
 }

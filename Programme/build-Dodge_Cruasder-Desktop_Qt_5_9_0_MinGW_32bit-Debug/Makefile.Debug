@@ -241,7 +241,9 @@ debug/moc_mainwindow.cpp: C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QMainWi
 		../Dodge_Cruasder/mainwindow.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
+
 	C:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include debug/moc_predefs.h -IC:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -IC:/Users/matthew.flenet/Desktop/GitHub/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder -IC:/Users/matthew.flenet/Desktop/GitHub/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -IC:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\Dodge_Cruasder\mainwindow.h -o debug\moc_mainwindow.cpp
+
 
 debug/moc_gameover.cpp: C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDialog \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h \
@@ -361,7 +363,9 @@ debug/moc_gameover.cpp: C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDialog \
 		../Dodge_Cruasder/gameover.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
+
 	C:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include debug/moc_predefs.h -IC:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -IC:/Users/matthew.flenet/Desktop/GitHub/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder -IC:/Users/matthew.flenet/Desktop/GitHub/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -IC:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\Dodge_Cruasder\gameover.h -o debug\moc_gameover.cpp
+
 
 debug/moc_game.cpp: C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDialog \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h \
@@ -479,7 +483,9 @@ debug/moc_game.cpp: C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDialog \
 		../Dodge_Cruasder/game.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
+
 	C:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include debug/moc_predefs.h -IC:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -IC:/Users/matthew.flenet/Desktop/GitHub/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder -IC:/Users/matthew.flenet/Desktop/GitHub/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -IC:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\Dodge_Cruasder\game.h -o debug\moc_game.cpp
+
 
 debug/moc_send_win.cpp: C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/QTcpSocket \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtcpsocket.h \
@@ -550,7 +556,9 @@ debug/moc_send_win.cpp: C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/QTcpSocke
 		../Dodge_Cruasder/send_win.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
+
 	C:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include debug/moc_predefs.h -IC:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -IC:/Users/matthew.flenet/Desktop/GitHub/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder -IC:/Users/matthew.flenet/Desktop/GitHub/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -IC:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -IC:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\Dodge_Cruasder\send_win.h -o debug\moc_send_win.cpp
+
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
