@@ -34,7 +34,6 @@ void MainWindow::on_btn_Start_clicked()
     gWindow.setModal(true);
     gWindow.exec();
     gWindow.setFixedSize(gWindow.size());
-    goWindow.resize(false);
 
     //Fermetrue de l'ancienne fenêtre.
     close();
@@ -46,7 +45,6 @@ void MainWindow::on_btn_Quit_clicked()
     goWindow.setModal(true);
     goWindow.exec();
     goWindow.setFixedSize(goWindow.size());
-    goWindow.resize(false);
 
     //Fermetrue de l'ancienne fenêtre.
     close();

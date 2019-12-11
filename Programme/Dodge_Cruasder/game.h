@@ -19,6 +19,7 @@ public:
     ~game();
 
 private slots:
+
     void on_pushButton_clicked();
     
     void on_pushButton_2_clicked();
@@ -27,15 +28,19 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+
     void asteroide();
+
     void asteroide1();
+
+    void asteroide2();
 
 
 private:
     Ui::game *ui;
 
-    int m_x = 340; //position initiale du vaisseau au centre de l'écran sur l'axe des abscisses
-    int m_y = 340; //position initiale du vaisseau au centre de l'écran sur l'axe des ordonnées
+    int m_x = 320; //position initiale du vaisseau au centre de l'écran sur l'axe des abscisses
+    int m_y = 320; //position initiale du vaisseau au centre de l'écran sur l'axe des ordonnées
 
     int mx_vaisseau = 0; //défini une variable de collision x pour le vaisseau
     int my_vaisseau = 0; //défini une variable de collision y pour le vaisseau
@@ -44,20 +49,21 @@ private:
 
     int mx_asteroide = rand() % 700 + 1; //défini une variable de collision x pour un astéroide
     int my_asteroide = -40; //défini une variable de collision x pour un astéroide
-    int taille_asteroide = rand() % 50 + 1; // défini une taille d'astéroide entre 1 et 50
-
-    int timer = 0;
 
     /* --------------- Astéroide 2 --------------- */
 
     int mx_asteroide1 = rand() % 700 + 1; //défini une variable de collision x pour un astéroide
-    int my_asteroide1 = -50; //défini une variable de collision x pour un astéroide
-    int taille_asteroide1 = rand() % 50 + 1; // défini une taille d'astéroide entre 1 et 50
+    int my_asteroide1 = -240; //défini une variable de collision x pour un astéroide
 
-    int timer_2 = 0;
+    /* --------------- Astéroide 3 --------------- */
+
+    int mx_asteroide2= rand() % 700 + 1; //défini une variable de collision x pour un astéroide
+    int my_asteroide2 = -440; //défini une variable de collision x pour un astéroide
+
+    /* --------------- Déclaration du Qtimer, du Thread --------------- */
 
     QTimer *m_timer;
-
+    double timerspeed = 8; //Défini la vitesse de base d'éxécution du thread
 };
 
 #endif // GAME_H
