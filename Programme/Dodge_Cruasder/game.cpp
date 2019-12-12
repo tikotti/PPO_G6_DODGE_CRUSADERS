@@ -2,7 +2,6 @@
 #include "ui_game.h"
 #include <QMessageBox>
 #include <QPixmap>
-#include <unistd.h> // pour les sleeps en micro secondes
 #include <iostream>
 #include <QApplication>
 #include <QTimer>
@@ -10,6 +9,9 @@
 #include <time.h>
 #include "gameover.h"
 #include "send_win.h"
+#include "database.h"
+#include <QSqlDatabase>
+#include <QtSql>
 
 /* ------------------------------------ Jeu ------------------------------------ */
 
@@ -45,7 +47,7 @@ game::game(QWidget *parent) : QDialog(parent), ui(new Ui::game)
     connect(m_timer, SIGNAL(timeout()), this, SLOT(asteroide1()));
     connect(m_timer, SIGNAL(timeout()), this, SLOT(asteroide2()));
 
-    connect(m_timer, SIGNAL(timeout()), this, SLOT(Score())); //
+    connect(m_timer, SIGNAL(timeout()), this, SLOT(Score())); // change le score a chaque initialisation
 
 
     m_timer->start(); // démarre les threads
@@ -117,6 +119,8 @@ void game::asteroide()
         {
             this->close();
 
+            Database();
+
             gameover goWindow;
 
             goWindow.setSizeGripEnabled(false);
@@ -146,14 +150,10 @@ void game::asteroide1()
         if( m_x -60 < mx_asteroide1 && m_x + 60 > mx_asteroide1 )
         {
 
-
-
-            if(score >= 15000) // verification si le score est bon
-            {
-                Send_Win(); // envoie au serveur que le joueur a gagné
-            }
-
+            /* --------------- Codage Win et Score --------------- */
             this->close();
+
+            Database();
 
             gameover goWindow;
 
@@ -188,6 +188,8 @@ void game::asteroide2()
         {
             this->close();
 
+            Database(); // j'apelle la mise en bdd
+
             gameover goWindow;
 
             goWindow.setSizeGripEnabled(false);
@@ -198,12 +200,67 @@ void game::asteroide2()
     }
 }
 
-void game::BackGroundGame()
-{
-}
+void game::BackGroundGame(){}
 
 int game::Score(){
     score = score + 1;
     std::cout << score << std::endl;
+
+    if(score >= 15000) // verification si le score est bon
+    {
+        Send_Win(); // envoie au serveur que le joueur a gagné
+    }
     return score;
+}
+
+void game::Database()
+{
+        QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL"); //
+        QSqlQuery query;
+
+        char EntreeNom[7] = {0};
+        int EntreeScores = 0;
+
+        db.setHostName("127.0.0.1"); // Adresse de la base de données (Ici PhpMyAdmin donc 127.0.0.1)
+        db.setDatabaseName("dodgecrusader"); // Nom de la base de données
+        db.setUserName("root"); // Nom d'utilisateur pour se connecter a la base de données
+        db.setPassword(""); // Mot de passe pour se connecter a la base de données
+
+        if(db.open()) // Si la base de données est ouverte
+        {
+            std::cout << "Acces a la base de donnees accepte" << std::endl;
+            std::cout << "Veuillez choisir un nom" << std::endl;
+
+            std::cin >> EntreeNom; // Choix du nom pour le joueur
+
+            std::cout << "Veuillez choisir un score" << std::endl;
+
+            std::cin >> EntreeScores; // Choix du score (A delete pour plus tard)
+
+            query.prepare("INSERT INTO `scores` (`Nom`, `Total`) VALUES (:Nom, :Total)"); // Commande SQL qui prepare les variables Nom et total dans la base de données
+            query.bindValue(":Nom", EntreeNom); // Nom prend la valeur entrée plus haut
+
+            query.bindValue(":Total", score); // Score prend la valeur entrée plus haut
+            query.exec(); // Executer la commande SQL
+
+
+            query.exec("SELECT `Nom` FROM `scores`"); // Execute la commande SQL entre parenthèses
+            while (query.next()) // Pendant que la query analyse un nouvelle élément dans la base
+            {
+                QString Nom = query.value(0).toString(); // Nom = Valeur saisie dans la base
+                std::cout << Nom.toStdString() << std::endl; // Affiche Nom
+            }
+
+            query.exec("SELECT `Total` FROM `scores`"); // Execute la commande SQL entre parenthèses
+            while (query.next()) // Pendant que la query analyse un nouvelle élément dans la base
+            {
+                int Total = query.value(0).toInt();  // int = Valeur saisie dans la base
+                std::cout << Total << std::endl; // Affiche Score
+            }
+        }
+        else
+        {
+            std::cout << "Impossible d'accéder à la base de données" << std::endl;
+        }
+
 }

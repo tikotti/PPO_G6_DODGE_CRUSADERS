@@ -18,6 +18,8 @@ public:
 
     ~game();
 
+    int getScore();
+
 private slots:
 
     void on_pushButton_clicked();
@@ -37,7 +39,11 @@ private slots:
 
     void BackGroundGame();
 
+    void Database();
+
     int Score();
+
+
 
 private:
     Ui::game *ui;
