@@ -38,7 +38,6 @@ Send_Win::~Send_Win()
 
 }
 
-
 //###############################################################################################################
 // Méthode appelée lors d'un déclenchement d'une excepetion sur un socket
 void Send_Win::afficherErreur(QAbstractSocket::SocketError socketError)

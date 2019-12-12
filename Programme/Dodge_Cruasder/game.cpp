@@ -8,11 +8,17 @@
 #include <QTimer>
 #include <windows.h>
 #include <time.h>
+#include "gameover.h"
+#include "send_win.h"
 
 /* ------------------------------------ Jeu ------------------------------------ */
 
 game::game(QWidget *parent) : QDialog(parent), ui(new Ui::game)
 {
+    /* --------------- Parametrage de la fenetre --------------- */
+
+    this->setFixedSize(QSize(720, 720));
+
     ui->setupUi(this);
 
     /* --------------- Affichage Des Images --------------- */
@@ -39,14 +45,10 @@ game::game(QWidget *parent) : QDialog(parent), ui(new Ui::game)
     connect(m_timer, SIGNAL(timeout()), this, SLOT(asteroide1()));
     connect(m_timer, SIGNAL(timeout()), this, SLOT(asteroide2()));
 
+    connect(m_timer, SIGNAL(timeout()), this, SLOT(Score())); //
+
+
     m_timer->start(); // démarre les threads
-
-    /* --------------- Codage Des Collisions --------------- */
-
-    if((m_y - 40) < my_asteroide < (m_y + 40) && (m_x - 40) < mx_asteroide < (m_x + 40))
-    {
-        std::cout << "Vous etes mort" << std::endl;
-    }
 }
 
 game::~game()
@@ -54,32 +56,7 @@ game::~game()
     delete ui;
 }
 
-/* ------------------------------------ Gameplay, Apparition, collisions ------------------------------------ */
-
-
-
 /* ------------------------------------ Déplacements Vaisseau ------------------------------------ */
-
-void game::on_pushButton_clicked() //haut
-{
-    if(m_y + 10 < 20){}
-    else
-    {
-        m_y = m_y - 10;
-        ui->Hero->move(m_x,m_y);
-    }
-}
-
-void game::on_pushButton_2_clicked() //bas
-{
-    if (m_y + 10 > 680){}
-    else
-    {
-        m_y = m_y + 10;
-        ui->Hero->move(m_x,m_y);
-    }
-}
-
 
 void game::on_pushButton_3_clicked() // droite
 {
@@ -117,9 +94,36 @@ void game::asteroide()
         my_asteroide = -50 ;
         mx_asteroide = rand() % 700 + 1;
 
-        timerspeed = timerspeed - 0.5; //fonction unique accélérant le jeu au fur et a mesure
+        /* ---------------Variables changeant au cours du temps --------------- */
+
+        if(timerspeed < 2.1 ){}
+        else if(timerspeed < 3 ){
+            timerspeed = timerspeed -0.1;
+        }else{
+            timerspeed = timerspeed - 0.3; //fonction unique accélérant le jeu au fur et a mesure
+        }
         m_timer->setInterval(timerspeed); //fonction unique accélérant le jeu au fur et a mesure
 
+    }
+
+    /* ---------------Collision Astéroide --------------- */
+
+    if( m_y - 60 < my_asteroide && m_y+60 > my_asteroide )
+    {
+
+        /* --------------- Codage Des Collisions --------------- */
+
+        if( m_x -60 < mx_asteroide && m_x+60 > mx_asteroide )
+        {
+            this->close();
+
+            gameover goWindow;
+
+            goWindow.setSizeGripEnabled(false);
+            goWindow.setModal(true);
+            goWindow.exec();
+            goWindow.setFixedSize(goWindow.size());
+        }
     }
 }
 
@@ -133,6 +137,33 @@ void game::asteroide1()
         my_asteroide1 = -240 ;
         mx_asteroide1 = rand() % 700 + 1;
     }
+
+    if( m_y - 60 < my_asteroide1 && m_y + 60 > my_asteroide1 )
+    {
+
+        /* --------------- Codage Des Collisions --------------- */
+
+        if( m_x -60 < mx_asteroide1 && m_x + 60 > mx_asteroide1 )
+        {
+
+
+
+            if(score >= 15000) // verification si le score est bon
+            {
+                Send_Win(); // envoie au serveur que le joueur a gagné
+            }
+
+            this->close();
+
+            gameover goWindow;
+
+            goWindow.setSizeGripEnabled(false);
+            goWindow.setModal(true);
+            goWindow.exec();
+            goWindow.setFixedSize(goWindow.size());
+
+    }
+}
 }
 
 void game::asteroide2()
@@ -147,8 +178,32 @@ void game::asteroide2()
         my_asteroide2 = -440 ;
         mx_asteroide2 = rand() % 700 + 1;
     }
+
+    if( m_y - 60 < my_asteroide2 && m_y+60 > my_asteroide2 )
+    {
+
+        /* --------------- Codage Des Collisions --------------- */
+
+        if( m_x -60 < mx_asteroide2 && m_x+60 > mx_asteroide2 )
+        {
+            this->close();
+
+            gameover goWindow;
+
+            goWindow.setSizeGripEnabled(false);
+            goWindow.setModal(true);
+            goWindow.exec();
+            goWindow.setFixedSize(goWindow.size());
+        }
+    }
 }
 
 void game::BackGroundGame()
 {
+}
+
+int game::Score(){
+    score = score + 1;
+    std::cout << score << std::endl;
+    return score;
 }

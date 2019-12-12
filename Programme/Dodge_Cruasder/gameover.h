@@ -16,6 +16,7 @@ class gameover : public QDialog
 public:
     explicit gameover(QDialog *parent = 0);
     ~gameover();
+    void test();
     QLabel label;
 
 protected:

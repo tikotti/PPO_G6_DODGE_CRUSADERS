@@ -7,12 +7,13 @@
 #include <QLayout>
 #include <QLabel>
 #include <QWidget>
+#include <iostream>
 
 gameover::gameover(QDialog *parent) :
     QDialog(parent)
 {
-   // QLabel *Label = new QLabel(this);
-    QPixmap bkgnd("Images/GO_BG.jpg");
+    // QLabel *Label = new QLabel(this);
+    QPixmap bkgnd("C:/Users/33782/Pictures/unity-logo-100571261-large.png");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
@@ -31,5 +32,6 @@ void gameover::showEvent(QShowEvent *event)
 
 void gameover::on_btn_Quit_clicked()
 {
-    close();
+
+    this->close();
 }

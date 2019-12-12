@@ -21,8 +21,6 @@ class Ui_game
 {
 public:
     QLabel *Hero;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QLabel *Asteroide;
@@ -39,22 +37,14 @@ public:
         Hero->setObjectName(QString::fromUtf8("Hero"));
         Hero->setGeometry(QRect(0, 0, 61, 61));
         Hero->setScaledContents(true);
-        pushButton = new QPushButton(game);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setEnabled(false);
-        pushButton->setGeometry(QRect(610, 540, 41, 23));
-        pushButton_2 = new QPushButton(game);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setEnabled(false);
-        pushButton_2->setGeometry(QRect(610, 610, 41, 23));
         pushButton_3 = new QPushButton(game);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setEnabled(true);
-        pushButton_3->setGeometry(QRect(660, 570, 41, 31));
+        pushButton_3->setGeometry(QRect(660, 680, 51, 31));
         pushButton_4 = new QPushButton(game);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setEnabled(true);
-        pushButton_4->setGeometry(QRect(560, 572, 41, 31));
+        pushButton_4->setGeometry(QRect(10, 680, 61, 31));
         Asteroide = new QLabel(game);
         Asteroide->setObjectName(QString::fromUtf8("Asteroide"));
         Asteroide->setGeometry(QRect(30, 30, 81, 81));
@@ -75,11 +65,9 @@ public:
         Asteroide2->raise();
         Asteroide1->raise();
         Asteroide->raise();
-        pushButton_2->raise();
         pushButton_3->raise();
         pushButton_4->raise();
         Hero->raise();
-        pushButton->raise();
 
         retranslateUi(game);
 
@@ -90,8 +78,6 @@ public:
     {
         game->setWindowTitle(QApplication::translate("game", "Dialog", nullptr));
         Hero->setText(QString());
-        pushButton->setText(QApplication::translate("game", "Up", nullptr));
-        pushButton_2->setText(QApplication::translate("game", "Down", nullptr));
         pushButton_3->setText(QApplication::translate("game", "Right", nullptr));
         pushButton_4->setText(QApplication::translate("game", "Left", nullptr));
         Asteroide->setText(QString());

@@ -37,8 +37,12 @@ private slots:
 
     void BackGroundGame();
 
+    int Score();
+
 private:
     Ui::game *ui;
+
+    /* --------------- Vaisseau --------------- */
 
     int m_x = 320; //position initiale du vaisseau au centre de l'écran sur l'axe des abscisses
     int m_y = 600; //position initiale du vaisseau au centre de l'écran sur l'axe des ordonnées
@@ -61,9 +65,12 @@ private:
     int mx_asteroide2= rand() % 700 + 1; //défini une variable de collision x pour un astéroide
     int my_asteroide2 = -440; //défini une variable de collision x pour un astéroide
 
-    /* --------------- Déclaration du Qtimer, du Thread --------------- */
+    /* --------------- Déclaration du Qtimer, vitesse des astéroides et score --------------- */
 
     QTimer *m_timer;
+
+    int score = 0;
+
     double timerspeed = 8; //Défini la vitesse de base d'éxécution du thread
 };
 

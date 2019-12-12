@@ -17,7 +17,6 @@ int main(int argc, char *argv[])
         std::cout << "commande_message_passe" << std::endl;
     }
 
-
     MainWindow w;
     w.show();
     w.setFixedSize(w.size());

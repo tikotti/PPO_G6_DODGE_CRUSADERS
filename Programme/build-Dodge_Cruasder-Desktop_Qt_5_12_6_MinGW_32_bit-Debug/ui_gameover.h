@@ -41,6 +41,7 @@ public:
         lbl_GO_BG->setIndent(-1);
         btn_Quit = new QPushButton(Form);
         btn_Quit->setObjectName(QString::fromUtf8("btn_Quit"));
+        btn_Quit->setEnabled(true);
         btn_Quit->setGeometry(QRect(250, 659, 221, 41));
         QFont font;
         font.setFamily(QString::fromUtf8("Agency FB"));

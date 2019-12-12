@@ -17,7 +17,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    goToStart();
+    void goToStart();
 
 private slots:
     void on_btn_Start_clicked();
