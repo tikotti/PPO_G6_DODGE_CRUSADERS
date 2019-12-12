@@ -35,12 +35,13 @@ private slots:
 
     void asteroide2();
 
+    void BackGroundGame();
 
 private:
     Ui::game *ui;
 
     int m_x = 320; //position initiale du vaisseau au centre de l'écran sur l'axe des abscisses
-    int m_y = 320; //position initiale du vaisseau au centre de l'écran sur l'axe des ordonnées
+    int m_y = 600; //position initiale du vaisseau au centre de l'écran sur l'axe des ordonnées
 
     int mx_vaisseau = 0; //défini une variable de collision x pour le vaisseau
     int my_vaisseau = 0; //défini une variable de collision y pour le vaisseau

@@ -17,18 +17,18 @@ game::game(QWidget *parent) : QDialog(parent), ui(new Ui::game)
 
     /* --------------- Affichage Des Images --------------- */
 
+    QPixmap BackGroundGame("C:/Users/33782/Pictures/BackGroundGame.png");
+    ui->BackGroundGame->setPixmap(BackGroundGame);
+
     QPixmap pix("E:/Github-Kraken/Dodge Crusaders/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder/Images/Hero.png");
     ui->Hero->setPixmap(pix);
     ui->Hero->move(m_x,m_y); //défini la position de base du vaisseau
 
     QPixmap Asteroide("E:/Github-Kraken/Dodge Crusaders/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder/Images/Asteroid.png");
+
     ui->Asteroide->setPixmap(Asteroide);
-
-    QPixmap Asteroide1("E:/Github-Kraken/Dodge Crusaders/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder/Images/Asteroid.png");
-    ui->Asteroide1->setPixmap(Asteroide1);
-
-    QPixmap Asteroide2("E:/Github-Kraken/Dodge Crusaders/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder/Images/Asteroid.png");
-    ui->Asteroide2->setPixmap(Asteroide1);
+    ui->Asteroide1->setPixmap(Asteroide);
+    ui->Asteroide2->setPixmap(Asteroide);
 
     /* --------------- Codage Des Threads --------------- */
 
@@ -149,3 +149,6 @@ void game::asteroide2()
     }
 }
 
+void game::BackGroundGame()
+{
+}

@@ -28,6 +28,7 @@ public:
     QLabel *Asteroide;
     QLabel *Asteroide1;
     QLabel *Asteroide2;
+    QLabel *BackGroundGame;
 
     void setupUi(QDialog *game)
     {
@@ -40,11 +41,11 @@ public:
         Hero->setScaledContents(true);
         pushButton = new QPushButton(game);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setEnabled(true);
+        pushButton->setEnabled(false);
         pushButton->setGeometry(QRect(610, 540, 41, 23));
         pushButton_2 = new QPushButton(game);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setEnabled(true);
+        pushButton_2->setEnabled(false);
         pushButton_2->setGeometry(QRect(610, 610, 41, 23));
         pushButton_3 = new QPushButton(game);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
@@ -66,6 +67,19 @@ public:
         Asteroide2->setObjectName(QString::fromUtf8("Asteroide2"));
         Asteroide2->setGeometry(QRect(520, 20, 81, 81));
         Asteroide2->setScaledContents(true);
+        BackGroundGame = new QLabel(game);
+        BackGroundGame->setObjectName(QString::fromUtf8("BackGroundGame"));
+        BackGroundGame->setGeometry(QRect(0, 0, 721, 721));
+        BackGroundGame->setScaledContents(true);
+        BackGroundGame->raise();
+        Asteroide2->raise();
+        Asteroide1->raise();
+        Asteroide->raise();
+        pushButton_2->raise();
+        pushButton_3->raise();
+        pushButton_4->raise();
+        Hero->raise();
+        pushButton->raise();
 
         retranslateUi(game);
 
@@ -83,6 +97,7 @@ public:
         Asteroide->setText(QString());
         Asteroide1->setText(QString());
         Asteroide2->setText(QString());
+        BackGroundGame->setText(QString());
     } // retranslateUi
 
 };

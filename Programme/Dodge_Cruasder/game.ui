@@ -31,7 +31,7 @@
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="enabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -47,7 +47,7 @@
   </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="enabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -141,6 +141,31 @@
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="BackGroundGame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>721</width>
+     <height>721</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>BackGroundGame</zorder>
+  <zorder>Asteroide2</zorder>
+  <zorder>Asteroide1</zorder>
+  <zorder>Asteroide</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>pushButton_4</zorder>
+  <zorder>Hero</zorder>
+  <zorder>pushButton</zorder>
  </widget>
  <resources/>
  <connections/>
