@@ -58,6 +58,8 @@
       <widget class="QListView" name="lst_score"/>
      </item>
     </layout>
+    <zorder>lst_score</zorder>
+    <zorder>lbl_score</zorder>
    </widget>
    <widget class="QLabel" name="lbl_charactere">
     <property name="enabled">

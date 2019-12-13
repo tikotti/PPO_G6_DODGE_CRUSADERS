@@ -131,7 +131,7 @@
   <widget class="QLabel" name="lbl_Score">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>300</x>
      <y>30</y>
      <width>161</width>
      <height>31</height>

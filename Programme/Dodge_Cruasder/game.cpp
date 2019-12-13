@@ -123,12 +123,12 @@ void game::asteroide()
 
     /* ---------------Collision Astéroide --------------- */
 
-    if( m_y - 60 < my_asteroide && m_y+60 > my_asteroide )
+    if( m_y - 50 < my_asteroide && m_y+50 > my_asteroide )
     {
 
         /* --------------- Codage Des Collisions --------------- */
 
-        if( m_x -60 < mx_asteroide && m_x+60 > mx_asteroide )
+        if( m_x -50 < mx_asteroide && m_x+50 > mx_asteroide )
         {
             this->close();
 
@@ -155,12 +155,12 @@ void game::asteroide1()
         mx_asteroide1 = rand() % 700 + 1;
     }
 
-    if( m_y - 60 < my_asteroide1 && m_y + 60 > my_asteroide1 )
+    if( m_y - 50 < my_asteroide1 && m_y + 50 > my_asteroide1 )
     {
 
         /* --------------- Codage Des Collisions --------------- */
 
-        if( m_x -60 < mx_asteroide1 && m_x + 60 > mx_asteroide1 )
+        if( m_x - 50 < mx_asteroide1 && m_x + 50 > mx_asteroide1 )
         {
 
             /* --------------- Codage Win et Score --------------- */
@@ -192,12 +192,12 @@ void game::asteroide2()
         mx_asteroide2 = rand() % 700 + 1;
     }
 
-    if( m_y - 60 < my_asteroide2 && m_y+60 > my_asteroide2 )
+    if( m_y - 50 < my_asteroide2 && m_y + 50 > my_asteroide2 )
     {
 
         /* --------------- Codage Des Collisions --------------- */
 
-        if( m_x -60 < mx_asteroide2 && m_x+60 > mx_asteroide2 )
+        if( m_x - 50 < mx_asteroide2 && m_x + 50 > mx_asteroide2 )
         {
             this->close();
 
@@ -223,6 +223,8 @@ int game::Score(){
     std::string stringscore = std::to_string(score); // Conversion du score en string
 
     QString QStringscore = QString::fromStdString(stringscore); // Conversion du string en Qstring (pour le mettre en texte dans un label)
+
+
 
     ui->lbl_Score->setText("Score : " + QStringscore); // Affichage du score dans le label
 
