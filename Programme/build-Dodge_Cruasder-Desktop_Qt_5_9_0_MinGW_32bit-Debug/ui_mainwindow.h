@@ -29,6 +29,7 @@ public:
     QWidget *centralWidget;
     QWidget *verticalLayoutWidget_2;
     QVBoxLayout *verticalLayout_2;
+
     QLabel *lbl_score;
     QListView *lst_score;
     QLabel *lbl_charactere;
@@ -40,7 +41,9 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
+
         MainWindow->resize(720, 720);
+
         MainWindow->setCursor(QCursor(Qt::CrossCursor));
         MainWindow->setAutoFillBackground(false);
         centralWidget = new QWidget(MainWindow);
@@ -53,6 +56,7 @@ public:
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+
         lbl_score = new QLabel(verticalLayoutWidget_2);
         lbl_score->setObjectName(QStringLiteral("lbl_score"));
         QFont font;
@@ -72,24 +76,24 @@ public:
 
         verticalLayout_2->addWidget(lst_score);
 
-        lst_score->raise();
-        lbl_score->raise();
         lbl_charactere = new QLabel(centralWidget);
         lbl_charactere->setObjectName(QStringLiteral("lbl_charactere"));
         lbl_charactere->setEnabled(true);
-        lbl_charactere->setGeometry(QRect(490, 60, 171, 281));
+        lbl_charactere->setGeometry(QRect(500, 60, 161, 281));
         lbl_charactere->setPixmap(QPixmap(QString::fromUtf8("Images/Hero.png")));
         lbl_charactere->setScaledContents(false);
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(0, 2, 720, 720));
+
         label_2->setPixmap(QPixmap(QString::fromUtf8("Images/M_BG.jpg")));
         label_2->setScaledContents(true);
         label_2->setMargin(0);
         label_2->setIndent(-1);
+
         btn_Start = new QPushButton(centralWidget);
         btn_Start->setObjectName(QStringLiteral("btn_Start"));
-        btn_Start->setGeometry(QRect(100, 100, 171, 41));
+        btn_Start->setGeometry(QRect(120, 100, 131, 41));
         btn_Start->setFont(font);
         btn_Start->setAutoDefault(true);
         btn_Quit = new QPushButton(centralWidget);
@@ -104,6 +108,7 @@ public:
         btn_Start->raise();
         btn_Quit->raise();
 
+
         retranslateUi(MainWindow);
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -112,6 +117,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Dodge Crusader", Q_NULLPTR));
+
         lbl_score->setText(QApplication::translate("MainWindow", "Tableau des scores", Q_NULLPTR));
         lbl_charactere->setText(QString());
         label_2->setText(QString());
