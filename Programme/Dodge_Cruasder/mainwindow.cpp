@@ -3,8 +3,8 @@
 #include "game.h"
 #include "gameover.h"
 #include "QLabel"
-#include <QSqlDatabase>
-#include <QtSql>
+//#include <QSqlDatabase>
+//#include <QtSql>
 #include <QStringList>
 #include <QStringListModel>
 #include <QAbstractItemView>
@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QPalette hpal;
     hpal.setBrush(QPalette::Background, hero);
     ui->lbl_charactere->setPalette(hpal);
-	
+    /*
 	        // -------------------------------------- Connexion a la base de données ----------------------------------------------------- //
 
         QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL"); //
@@ -64,7 +64,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
                 }
 	
-	
+    */
 	
 }
 

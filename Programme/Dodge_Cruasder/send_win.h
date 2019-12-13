@@ -15,6 +15,8 @@ class Send_Win : public QObject
         Send_Win();
         ~Send_Win();
 
+        void gagner();
+
     private slots:
         void afficherErreur(QAbstractSocket::SocketError socketError);
 
@@ -26,6 +28,5 @@ class Send_Win : public QObject
         quint16 m_blockSize;
         QNetworkSession *m_networkSession;
 };
-
 
 #endif // SEND_WIN_H

@@ -8,10 +8,9 @@
 #include <windows.h>
 #include <time.h>
 #include "gameover.h"
-#include "send_win.h"
 #include "database.h"
-#include <QSqlDatabase>
-#include <QtSql>
+//#include <QSqlDatabase>
+//#include <QtSql>
 #include <QString>
 #include <QLabel>
 #include <QDebug>
@@ -112,7 +111,7 @@ void game::asteroide()
 
         /* ---------------Variables changeant au cours du temps --------------- */
 
-        if(timerspeed < 2.1 ){}
+        if(timerspeed < 2 ){}
         else if(timerspeed < 3 ){
             timerspeed = timerspeed -0.1;
         }else{
@@ -124,12 +123,12 @@ void game::asteroide()
 
     /* ---------------Collision Astéroide --------------- */
 
-    if( m_y - 60 < my_asteroide && m_y+60 > my_asteroide )
+    if( m_y - 50 < my_asteroide && m_y+50 > my_asteroide )
     {
 
         /* --------------- Codage Des Collisions --------------- */
 
-        if( m_x -60 < mx_asteroide && m_x+60 > mx_asteroide )
+        if( m_x -50 < mx_asteroide && m_x+50 > mx_asteroide )
         {
             this->close();
 
@@ -156,12 +155,12 @@ void game::asteroide1()
         mx_asteroide1 = rand() % 700 + 1;
     }
 
-    if( m_y - 60 < my_asteroide1 && m_y + 60 > my_asteroide1 )
+    if( m_y - 50 < my_asteroide1 && m_y + 50 > my_asteroide1 )
     {
 
         /* --------------- Codage Des Collisions --------------- */
 
-        if( m_x -60 < mx_asteroide1 && m_x + 60 > mx_asteroide1 )
+        if( m_x - 50 < mx_asteroide1 && m_x + 50 > mx_asteroide1 )
         {
 
             /* --------------- Codage Win et Score --------------- */
@@ -193,12 +192,12 @@ void game::asteroide2()
         mx_asteroide2 = rand() % 700 + 1;
     }
 
-    if( m_y - 60 < my_asteroide2 && m_y+60 > my_asteroide2 )
+    if( m_y - 50 < my_asteroide2 && m_y + 50 > my_asteroide2 )
     {
 
         /* --------------- Codage Des Collisions --------------- */
 
-        if( m_x -60 < mx_asteroide2 && m_x+60 > mx_asteroide2 )
+        if( m_x - 50 < mx_asteroide2 && m_x + 50 > mx_asteroide2 )
         {
             this->close();
 
@@ -225,18 +224,21 @@ int game::Score(){
 
     QString QStringscore = QString::fromStdString(stringscore); // Conversion du string en Qstring (pour le mettre en texte dans un label)
 
+
+
     ui->lbl_Score->setText("Score : " + QStringscore); // Affichage du score dans le label
 
-    if(score >= 15000) // verification si le score est bon
+    if(score == 100) // verification si le score est bon
     {
-        Send_Win(); // envoie au serveur que le joueur a gagné
+        sw.gagner();        // envoie au serveur que le joueur a gagné
     }
+
     return score;
 }
 
 void game::Database()
 {
-        QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL"); //
+    /*    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL"); //
         QSqlQuery query;
 
         char EntreeNom[7] = {0};
@@ -283,7 +285,7 @@ void game::Database()
         {
             std::cout << "Impossible d'accéder à la base de données" << std::endl;
         }
-
+*/
 }
 
 
