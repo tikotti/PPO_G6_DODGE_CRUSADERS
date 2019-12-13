@@ -75,6 +75,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_Start_clicked()
 {
+    this->close();
     game gWindow;
     gWindow.setModal(true);
     gWindow.exec();

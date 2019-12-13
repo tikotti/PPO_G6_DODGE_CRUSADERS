@@ -7,8 +7,6 @@
 #include <iostream>
 #include <QLabel>
 
-#include "send_win.h"
-
 namespace Ui {
 class game;
 }
@@ -79,12 +77,8 @@ private:
     QTimer *m_timer;
 
     int score = 0;
-    int x = 0;
 
     double timerspeed = 8; //Défini la vitesse de base d'éxécution du thread
-
-    Send_Win sw;
-
 
 
 };

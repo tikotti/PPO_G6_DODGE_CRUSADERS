@@ -12,7 +12,6 @@ int main(int argc, char *argv[])
 
     bool send = false;
 
-
     if(send){
         Send_Win sw;
         std::cout << "commande_message_passe" << std::endl;

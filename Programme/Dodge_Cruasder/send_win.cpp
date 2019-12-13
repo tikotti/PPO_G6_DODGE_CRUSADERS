@@ -8,18 +8,10 @@ Send_Win::Send_Win()
     :   m_networkSession(0)
 {
     std::cout << "Application Client" << std::endl;
-
-}
-
-Send_Win::~Send_Win()
-{
-
-}
-
-void Send_Win::gagner()
-{
-    std::cout << "gagner" << std::endl;
     m_tcpSocket = new QTcpSocket(this);
+
+    // La méthode lireTexte sera appelée sur le signal readyRead
+    connect(m_tcpSocket, SIGNAL(readyRead()), this, SLOT(lireTexte()));
 
     // La méthode afficherErreur sera appelée sur le signal error
     connect(m_tcpSocket, SIGNAL(error(QAbstractSocket::SocketError)),
@@ -37,14 +29,13 @@ void Send_Win::gagner()
     m_tcpSocket->abort();
 
     // connexion au serveur sur le port 53000
-    m_tcpSocket->connectToHost( QHostAddress("10.16.3.214").toString(),53000 );
-
-    //sleep(1°);
-
+    m_tcpSocket->connectToHost( QHostAddress("10.16.2.47").toString(),53000 );
     envoiTexte("GAGNE:6");
+}
 
-    // déconnexion au serveur
-    //m_tcpSocket->disconnect();
+Send_Win::~Send_Win()
+{
+
 }
 
 //###############################################################################################################
