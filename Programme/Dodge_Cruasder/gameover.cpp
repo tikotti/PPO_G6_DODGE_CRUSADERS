@@ -8,12 +8,13 @@
 #include <QLabel>
 #include <QWidget>
 #include <iostream>
+#include <QDir>
 
 gameover::gameover(QDialog *parent) :
     QDialog(parent)
 {
-    // QLabel *Label = new QLabel(this);
-    QPixmap bkgnd("C:/Users/33782/Pictures/unity-logo-100571261-large.png");
+
+    QPixmap bkgnd("Images/GO_BG.jpg");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);

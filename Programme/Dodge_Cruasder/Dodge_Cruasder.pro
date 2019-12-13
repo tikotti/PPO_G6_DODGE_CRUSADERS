@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+QT       += sql
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Dodge_Cruasder
@@ -50,6 +50,8 @@ INCLUDEPATH += .
 # SOURCES += FenServeur.cpp main.cpp
 
 DISTFILES += \
+    Images/Asteroid.png \
+    Images/BackGroundGame.png \
     Images/GO_BG.jpg \
     Images/M_BG.jpg \
     Images/Hero.png \

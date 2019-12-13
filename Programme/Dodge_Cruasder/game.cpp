@@ -12,6 +12,15 @@
 #include "database.h"
 #include <QSqlDatabase>
 #include <QtSql>
+#include <QString>
+#include <QLabel>
+#include <QDebug>
+#include <conio.h>
+#include <QHoverEvent>
+#include <QtWidgets>
+
+#define KEY_LEFT 75
+#define KEY_X 120
 
 /* ------------------------------------ Jeu ------------------------------------ */
 
@@ -25,14 +34,14 @@ game::game(QWidget *parent) : QDialog(parent), ui(new Ui::game)
 
     /* --------------- Affichage Des Images --------------- */
 
-    QPixmap BackGroundGame("C:/Users/33782/Pictures/BackGroundGame.png");
+    QPixmap BackGroundGame("Images/BackGroundGame.png");
     ui->BackGroundGame->setPixmap(BackGroundGame);
 
-    QPixmap pix("E:/Github-Kraken/Dodge Crusaders/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder/Images/Hero.png");
+    QPixmap pix("Images/Hero.png");
     ui->Hero->setPixmap(pix);
     ui->Hero->move(m_x,m_y); //défini la position de base du vaisseau
 
-    QPixmap Asteroide("E:/Github-Kraken/Dodge Crusaders/PPO_G6_DODGE_CRUSADERS/Programme/Dodge_Cruasder/Images/Asteroid.png");
+    QPixmap Asteroide("Images/Asteroid.png");
 
     ui->Asteroide->setPixmap(Asteroide);
     ui->Asteroide1->setPixmap(Asteroide);
@@ -51,6 +60,11 @@ game::game(QWidget *parent) : QDialog(parent), ui(new Ui::game)
 
 
     m_timer->start(); // démarre les threads
+
+    setMouseTracking(true);
+    setAttribute(Qt::WA_Hover);
+
+
 }
 
 game::~game()
@@ -157,10 +171,10 @@ void game::asteroide1()
 
             gameover goWindow;
 
-            goWindow.setSizeGripEnabled(false);
             goWindow.setModal(true);
             goWindow.exec();
             goWindow.setFixedSize(goWindow.size());
+            goWindow.setSizeGripEnabled(false);
 
     }
 }
@@ -204,7 +218,14 @@ void game::BackGroundGame(){}
 
 int game::Score(){
     score = score + 1;
-    std::cout << score << std::endl;
+
+    std::cout << score << std::endl; // Affichage du score dans l'invite de commande
+
+    std::string stringscore = std::to_string(score); // Conversion du score en string
+
+    QString QStringscore = QString::fromStdString(stringscore); // Conversion du string en Qstring (pour le mettre en texte dans un label)
+
+    ui->lbl_Score->setText("Score : " + QStringscore); // Affichage du score dans le label
 
     if(score >= 15000) // verification si le score est bon
     {
@@ -264,3 +285,5 @@ void game::Database()
         }
 
 }
+
+

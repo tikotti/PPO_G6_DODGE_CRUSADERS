@@ -4,6 +4,8 @@
 #include <QDialog>
 #include "mainwindow.h"
 #include <QTimer>
+#include <iostream>
+#include <QLabel>
 
 namespace Ui {
 class game;
@@ -20,11 +22,9 @@ public:
 
     int getScore();
 
+
 private slots:
 
-    void on_pushButton_clicked();
-    
-    void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
 
@@ -42,6 +42,7 @@ private slots:
     void Database();
 
     int Score();
+
 
 
 
@@ -78,6 +79,8 @@ private:
     int score = 0;
 
     double timerspeed = 8; //Défini la vitesse de base d'éxécution du thread
+
+
 };
 
 #endif // GAME_H

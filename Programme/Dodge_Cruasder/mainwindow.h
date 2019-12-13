@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "game.h"
 #include "QLabel"
+#include <QStringListModel>
+
 
 namespace Ui {
 class MainWindow;
@@ -25,6 +27,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QStringListModel *model;
 };
 
 #endif // MAINWINDOW_H
