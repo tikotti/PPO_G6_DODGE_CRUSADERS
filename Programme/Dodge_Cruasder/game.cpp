@@ -8,7 +8,6 @@
 #include <windows.h>
 #include <time.h>
 #include "gameover.h"
-#include "send_win.h"
 #include "database.h"
 #include <QSqlDatabase>
 #include <QtSql>
@@ -227,10 +226,11 @@ int game::Score(){
 
     ui->lbl_Score->setText("Score : " + QStringscore); // Affichage du score dans le label
 
-    if(score >= 15000) // verification si le score est bon
+    if(score == 13000) // verification si le score est bon
     {
-        Send_Win(); // envoie au serveur que le joueur a gagné
+        sw.gagner();        // envoie au serveur que le joueur a gagné
     }
+
     return score;
 }
 

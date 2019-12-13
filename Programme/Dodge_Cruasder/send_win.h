@@ -15,6 +15,8 @@ class Send_Win : public QObject
         Send_Win();
         ~Send_Win();
 
+        void gagner();
+
     private slots:
         void afficherErreur(QAbstractSocket::SocketError socketError);
 
